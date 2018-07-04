@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.MainMenuController">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="374.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#newGameClicked" prefHeight="36.0" prefWidth="400.0" text="NEW GAME!" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font name="Bodoni MT Black" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="200.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#howToPlayClicked" prefHeight="36.0" prefWidth="400.0" text="HOW TO PLAY" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="250.0">
+               <font>
+                  <Font name="Bodoni MT Black" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="200.0" layoutY="372.0" mnemonicParsing="false" onMouseClicked="#exitClicked" prefHeight="36.0" prefWidth="400.0" text="EXIT" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="450.0">
+               <font>
+                  <Font name="Bodoni MT Black" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="200.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#highScoreClicked" prefHeight="36.0" prefWidth="400.0" text="VIEW HIGH SCORES" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="350.0">
+               <font>
+                  <Font name="Bodoni MT Black" size="24.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="122.0" onMouseClicked="#newGameClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0">
+               <image>
+                  <Image url="@Flowers/Rose.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="222.0" onMouseClicked="#howToPlayClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="222.0">
+               <image>
+                  <Image url="@Flowers/Carnationdl.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="422.0" onMouseClicked="#exitClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="422.0">
+               <image>
+                  <Image url="@Flowers/Daisy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="322.0" onMouseClicked="#highScoreClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="322.0">
+               <image>
+                  <Image url="@Flowers/Pansy.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="332.0" layoutY="56.0" prefHeight="17.0" prefWidth="267.0" text="Carnation Carnage" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Segoe Script" size="48.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </center>
+</BorderPane>
