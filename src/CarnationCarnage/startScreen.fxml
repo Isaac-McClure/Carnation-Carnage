@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.StartController">
+   <center>
+      <AnchorPane fx:id="startPane" onKeyPressed="#launchMainMenu" onMouseClicked="#launchMainMenu" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+             <Label alignment="CENTER" layoutX="-1.0" layoutY="101.0" prefHeight="186.0" prefWidth="800.0" text="Carnation Carnage" textAlignment="JUSTIFY" AnchorPane.bottomAnchor="299.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="101.0">
+               <font>
+                  <Font name="Bodoni MT Black" size="72.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="341.0" prefHeight="50.0" prefWidth="800.0" text="By BITSa Game Studio" AnchorPane.bottomAnchor="199.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0">
+               <font>
+                  <Font name="Bodoni MT" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
