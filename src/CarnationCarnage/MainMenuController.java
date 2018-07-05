@@ -20,9 +20,12 @@ public class MainMenuController extends Application{
     }
 
     
+    
+    
     @FXML
     public void newGameClicked() {
         //New game code here
+    	//CarnationCarnageMain.NewGame()
     }
     
     @FXML
