@@ -1,7 +1,12 @@
 /**
  * Author: Isaac McClure
  * Date: Jul 3, 2018
+ * 
+ * All images are from royalty free image downlod websites
+ * Opening screen background from https://www.pexels.com/photo/fire-flower-love-hot-sparkles-dreams-841384/
+ * Menu Background photo by corina ardeleanu on Unsplash
  */
+
 package CarnationCarnage;
 
 import java.io.IOException;
@@ -16,7 +21,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import sun.applet.Main;
 
 //Class initializes Java fx
 public class CarnationCarnageMain extends Application{
@@ -33,16 +37,17 @@ public class CarnationCarnageMain extends Application{
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Carnation Carnage");      
         showMainView();
-        
     }
     
     private void showMainView() throws IOException {
         //Load in the scene
+    	
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/startScreen.fxml"));       
         startScreen = loader.load();
         startScene = new Scene(startScreen);
         primaryStage.setScene(startScene);
+        primaryStage.setResizable(true);
         primaryStage.show();
     }
        

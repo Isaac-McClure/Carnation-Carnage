@@ -5,7 +5,6 @@
 package CarnationCarnage;
 
 import java.io.IOException;
-import sun.applet.Main;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
