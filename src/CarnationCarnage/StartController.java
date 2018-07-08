@@ -23,10 +23,12 @@ public class StartController {
     @FXML
     private void launchMainMenu() throws IOException 
     {   
-        
+        // Load Scene
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/mainMenu.fxml"));        
+        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/mainMenu.fxml"));        
         BorderPane menuScreen = loader.load();
+        
+        //Show scene
         Stage primaryStage = (Stage) startPane.getScene().getWindow();
         primaryStage.setScene(new Scene(menuScreen));
      }

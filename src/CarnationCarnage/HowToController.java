@@ -14,46 +14,28 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 //Controller class for MainMenu.FXML 
-public class MainMenuController extends Application{
+public class HowToController extends Application{
     // This class shows and handles input from the main menu
     @FXML
-    AnchorPane mainMenuPane = new AnchorPane()
-    ;
+    private AnchorPane howToPane;
     public void initialize(){
+        
     }
-
-    
-    
+       
     
     @FXML
-    public void newGameClicked() {
-        //New game code here
-    	//CarnationCarnageMain.NewGame()
-    }
-    
-    @FXML
-    public void howToPlayClicked() throws IOException{
-        //Opens how to play scene
-        //Load scene
+    public void backClicked() throws IOException {
+        // Send the user back to the main menu
+        // Load Scene
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/RulesPage.fxml"));        
+        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/mainMenu.fxml"));        
         BorderPane menuScreen = loader.load();
         
-        //show scene
-        Stage primaryStage = (Stage) mainMenuPane.getScene().getWindow();
+        // Show Scene
+        Stage primaryStage = (Stage) howToPane.getScene().getWindow();
         primaryStage.setScene(new Scene(menuScreen));
-    }
+     }
     
-    @FXML
-    public void highScoreClicked() {
-        //High score code here
-    }
-    
-    @FXML
-    public void exitClicked() {
-        //Exit
-        System.exit(0);
-    }
 
 
     @Override

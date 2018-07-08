@@ -43,7 +43,7 @@ public class CarnationCarnageMain extends Application{
         //Load in the scene
     	
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/startScreen.fxml"));       
+        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/startScreen.fxml"));       
         startScreen = loader.load();
         startScene = new Scene(startScreen);
         primaryStage.setScene(startScene);
