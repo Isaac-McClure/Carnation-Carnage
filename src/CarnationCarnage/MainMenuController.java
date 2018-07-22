@@ -17,18 +17,23 @@ import javafx.stage.Stage;
 public class MainMenuController extends Application{
     // This class shows and handles input from the main menu
     @FXML
-    AnchorPane mainMenuPane = new AnchorPane()
-    ;
+    AnchorPane mainMenuPane = new AnchorPane();
     public void initialize(){
     }
 
-    
-    
-    
     @FXML
-    public void newGameClicked() {
+    public void newGameClicked() throws IOException {
         //New game code here
     	//CarnationCarnageMain.NewGame()
+        //Opens how to play scene
+        //Load scene
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/PlayerCreationScreen.fxml"));        
+        BorderPane setupScreen = loader.load();
+        
+        //show scene
+        Stage primaryStage = (Stage) mainMenuPane.getScene().getWindow();
+        primaryStage.setScene(new Scene(setupScreen));
     }
     
     @FXML

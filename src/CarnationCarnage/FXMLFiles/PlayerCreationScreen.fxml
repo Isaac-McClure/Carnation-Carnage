@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="CarnationCarnage.PlayerCreationController">
+   <bottom>
+      <AnchorPane fx:id="anchorPane" prefHeight="550.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="139.0" layoutY="133.0" text="Player One:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="137.0" layoutY="188.0" text="Player Two: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="139.0" layoutY="91.0" text="Please enter player names">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPlayerOneName" layoutX="246.0" layoutY="134.0" prefHeight="25.0" prefWidth="200.0" />
+            <TextField fx:id="txtPlayerTwoName" layoutX="246.0" layoutY="189.0" prefHeight="25.0" prefWidth="200.0" />
+            <Button fx:id="startButton" layoutX="300.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#startButtonClicked" prefHeight="50.0" prefWidth="93.0" text="Start!" />
+            <Label layoutX="139.0" layoutY="310.0" text="Still need to add coin flip animation or something" />
+            <Label fx:id="helpLabel" layoutX="137.0" layoutY="235.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
