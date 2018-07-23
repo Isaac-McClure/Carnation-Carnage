@@ -50,8 +50,16 @@ public class MainMenuController extends Application{
     }
     
     @FXML
-    public void highScoreClicked() {
+    public void highScoreClicked() throws IOException {
         //High score code here
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/LeaderBoardScreen.fxml"));        
+        AnchorPane LeaderBoardScreen = loader.load();
+        
+        //show scene
+        Stage primaryStage = (Stage) mainMenuPane.getScene().getWindow();
+        primaryStage.setScene(new Scene(LeaderBoardScreen));
     }
     
     @FXML
