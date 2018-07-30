@@ -7,7 +7,7 @@ public enum FlowerType {
     Rose("Rose", 5, new Image("/CarnationCarnage/Flowers/Rose.png")),
     Carnation("Carnation", 4, new Image("/CarnationCarnage/Flowers/Carnationdl.png")),
     Pansy("Pansy", 3, new Image("/CarnationCarnage/Flowers/Pansy.jpg")),
-    Tulip("Tulip", 3, new Image("/CarnationCarnage/Flowers/Daisy.png")),
+    Tulip("Tulip", 3, new Image("/CarnationCarnage/Flowers/tulip.png")),
     Daisy("Daisy", 2, new Image("/CarnationCarnage/Flowers/Daisy.png"));
     
     private String name;

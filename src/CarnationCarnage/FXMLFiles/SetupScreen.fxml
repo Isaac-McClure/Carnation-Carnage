@@ -135,7 +135,7 @@
       </ImageView>
       <ImageView fx:id="tulipImage" fitHeight="40.0" fitWidth="120.0" layoutX="694.0" layoutY="260.0" pickOnBounds="true">
          <image>
-            <Image url="@../Flowers/Pansy.jpg" />
+            <Image url="@../Flowers/tulip.png" />
          </image>
       </ImageView>
       <ImageView fx:id="daisyImage" fitHeight="40.0" fitWidth="80.0" layoutX="694.0" layoutY="313.0" pickOnBounds="true">
