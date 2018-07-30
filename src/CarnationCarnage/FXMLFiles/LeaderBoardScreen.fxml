@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="Leader" prefHeight="555.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="Leader" prefHeight="555.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.LeaderBoardController">
    <children>
       <ImageView fitHeight="577.0" fitWidth="931.0" nodeOrientation="INHERIT" opacity="0.37" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/BackgroundScore.jpg" />
+            <Image url="@../Images/BackgroundScore.jpg" />
          </image>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
@@ -34,9 +34,9 @@
       </Label>
       <ImageView fitHeight="302.0" fitWidth="382.0" layoutX="46.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/1.jpg" />
+            <Image url="@../Images/1.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="28.0" layoutY="502.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="125.0" text="Button" />
+      <Button layoutX="21.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="31.0" prefWidth="107.0" text="Back" />
    </children>
 </AnchorPane>
