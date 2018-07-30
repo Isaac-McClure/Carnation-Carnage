@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -32,11 +33,116 @@
             <Font size="64.0" />
          </font>
       </Label>
-      <ImageView fitHeight="302.0" fitWidth="382.0" layoutX="46.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="302.0" fitWidth="382.0" layoutX="21.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/1.jpg" />
          </image>
       </ImageView>
       <Button layoutX="21.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="31.0" prefWidth="107.0" text="Back" />
+      <GridPane layoutX="371.0" layoutY="114.0" prefHeight="432.0" prefWidth="520.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="76.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="225.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="208.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="65.0" prefWidth="88.0" text="#1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Algerian" size="58.0" />
+               </font>
+            </Label>
+            <Label prefHeight="65.0" prefWidth="88.0" text="#2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Algerian" size="58.0" />
+               </font>
+            </Label>
+            <Label prefHeight="65.0" prefWidth="91.0" text="#3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Algerian" size="58.0" />
+               </font>
+            </Label>
+            <Label prefHeight="65.0" prefWidth="89.0" text="#5" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Algerian" size="58.0" />
+               </font>
+            </Label>
+            <Label prefHeight="65.0" prefWidth="87.0" text="#4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Algerian" size="58.0" />
+               </font>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" textAlignment="CENTER" wrappingWidth="226.42000198364258" GridPane.columnIndex="1">
+               <font>
+                  <Font name="AR DELANEY" size="57.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SCORE" textAlignment="CENTER" wrappingWidth="208.42000198364258" GridPane.columnIndex="2">
+               <font>
+                  <Font name="AR DELANEY" size="57.0" />
+               </font>
+            </Text>
+            <Label fx:id="name1" alignment="CENTER" prefHeight="62.0" prefWidth="234.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="name2" alignment="CENTER" prefHeight="62.0" prefWidth="232.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="name3" alignment="CENTER" prefHeight="62.0" prefWidth="231.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="name4" alignment="CENTER" prefHeight="62.0" prefWidth="232.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="name5" alignment="CENTER" prefHeight="62.0" prefWidth="233.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="score1" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="score2" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="score3" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="score4" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+            <Label fx:id="score5" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="AR JULIAN" size="53.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
    </children>
 </AnchorPane>
