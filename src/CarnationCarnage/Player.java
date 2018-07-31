@@ -12,7 +12,7 @@ public class Player {
     Player(String name){
         this.name = name;
         this.score = 0;
-        board = new Board();
+        setBoard(new Board());
         opponent = null;
     }
     
@@ -30,5 +30,13 @@ public class Player {
     
     public void setOpponent(Player inOpponent) {
         this.opponent = inOpponent;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 }

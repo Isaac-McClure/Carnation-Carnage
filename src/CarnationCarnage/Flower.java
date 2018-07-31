@@ -18,12 +18,15 @@ public class Flower {
         this.type = type;
     }
     
-    public boolean checkShot(Point coordinate) {
+    public boolean checkShot(Point coordinate, boolean real) {
         // Checks to see if the flower was hit, removes square from flower if so
-        if (positions.contains(coordinate)){
-            hits += 1;
-            positions.remove(coordinate);
-            deadPositions.add(coordinate);
+        // real is a flag set to false when using this method for placement validation
+        if (positions.contains(coordinate)){         
+            if (real) {
+                hits += 1;
+                positions.remove(coordinate);
+                deadPositions.add(coordinate);
+            }
             return true;
         }       
         else {
@@ -49,6 +52,18 @@ public class Flower {
     
     public void setPositions(ArrayList<Point> inPositions) {
         this.positions = inPositions;
+    }
+
+    public boolean isOrientationIsVertical() {
+        return orientationIsVertical;
+    }
+
+    public void setOrientationIsVertical(boolean orientationIsVertical) {
+        this.orientationIsVertical = orientationIsVertical;
+    }
+        
+    public FlowerType getType() {
+        return this.type;
     }
     
 }

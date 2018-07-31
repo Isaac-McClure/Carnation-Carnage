@@ -15,7 +15,7 @@
             <Image url="@../Images/corina-ardeleanu-39335-unsplash.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="118.0" layoutY="100.0" prefHeight="450.0" prefWidth="447.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="118.0">
+      <AnchorPane fx:id="gridAnchorPane" layoutX="118.0" layoutY="100.0" prefHeight="450.0" prefWidth="447.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="118.0">
          <children>
             <GridPane fx:id="setupGrid" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
@@ -28,7 +28,7 @@
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints />
@@ -118,31 +118,6 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <ImageView fx:id="roseImage" fitHeight="40.0" fitWidth="200.0" layoutX="694.0" layoutY="117.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Flowers/Rose.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="carnationImage" fitHeight="40.0" fitWidth="160.0" layoutX="694.0" layoutY="166.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Flowers/Carnationdl.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="pansyImage" fitHeight="40.0" fitWidth="120.0" layoutX="694.0" layoutY="214.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Flowers/Pansy.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="tulipImage" fitHeight="40.0" fitWidth="120.0" layoutX="694.0" layoutY="260.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Flowers/tulip.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="daisyImage" fitHeight="40.0" fitWidth="80.0" layoutX="694.0" layoutY="313.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Flowers/Daisy.png" />
-         </image>
-      </ImageView>
       <Button fx:id="doneButton" layoutX="694.0" layoutY="489.0" mnemonicParsing="false" onMouseClicked="#doneClicked" prefHeight="61.0" prefWidth="120.0" text="Done" />
    </children>
 </AnchorPane>
