@@ -40,13 +40,13 @@ public class PlayerCreationController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/SetupScreen.fxml"));        
         AnchorPane setupScreen = loader.load();
+        Stage primaryStage = (Stage) anchorPane.getScene().getWindow();
         
         // Pass the first player to the SetupController
         SetupController controller = loader.<SetupController>getController();
         controller.setPlayer(player);
         controller.reInitialise();
         // Show scene 
-        Stage primaryStage = (Stage) anchorPane.getScene().getWindow();
         primaryStage.setScene(new Scene(setupScreen));
      }
     
