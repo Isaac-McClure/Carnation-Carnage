@@ -5,29 +5,22 @@ import java.awt.Point;
 
 public enum FlowerType {
   //Maps flowers with lengths
-    Rose("Rose", 5, new ImageView("/CarnationCarnage/Flowers/Rose.png"), new Point(700, 120)),
-    Carnation("Carnation", 4, new ImageView("/CarnationCarnage/Flowers/Carnationdl.png"), new Point(700, 165)),
-    Pansy("Pansy", 3, new ImageView("/CarnationCarnage/Flowers/Pansy.jpg"), new Point(700, 210)),
-    Tulip("Tulip", 3, new ImageView("/CarnationCarnage/Flowers/tulip.png"), new Point(700, 255)),
-    Daisy("Daisy", 2, new ImageView("/CarnationCarnage/Flowers/Daisy.png"), new Point(700, 300));
+    Rose("Rose", 5, "/CarnationCarnage/Flowers/Rose.png"),
+    Carnation("Carnation", 4, "/CarnationCarnage/Flowers/Carnationdl.png"),
+    Pansy("Pansy", 3, "/CarnationCarnage/Flowers/Pansy.jpg"),
+    Tulip("Tulip", 3, "/CarnationCarnage/Flowers/tulip.png"),
+    Daisy("Daisy", 2, "/CarnationCarnage/Flowers/Daisy.png");
     
     private String name;
     private int length;
-    private ImageView icon;
+    private String iconURL;
     
-    // Used to place in setup
-    private Point defaultPosition;
     
-    FlowerType(String name, int length, ImageView icon, Point defaultPosition) {
+    FlowerType(String name, int length, String iconURL) {
         this.name = name;
         this.length = length;
-        this.icon = icon;
-        this.defaultPosition = defaultPosition;
+        this.iconURL = iconURL;
         
-        // Setup image size and properties
-        this.icon.setPreserveRatio(false);
-        this.icon.setFitHeight(40);
-        this.icon.setFitWidth(length * 40);
     }
     
     int getLength() {
@@ -38,11 +31,8 @@ public enum FlowerType {
         return this.name;
     }
     
-    ImageView getIcon() {
-        return this.icon;
+    String getIconURL() {
+        return this.iconURL;
     }
     
-    Point getDefaultPosition() {
-        return this.defaultPosition;
-    }
 }

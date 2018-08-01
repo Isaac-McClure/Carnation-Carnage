@@ -5,15 +5,21 @@ public class Player {
     // name, and their score.
     
     private double score;
+    private int hits;
+    private int shipsSunk;
     private Board board;
     private String name;
     private Player opponent;
+    private Boolean doneSetup;
     
     Player(String name){
         this.name = name;
         this.score = 0;
         setBoard(new Board());
         opponent = null;
+        doneSetup = false;
+        setHits(0);
+        setShipsSunk(0);
     }
     
     public String getName() {
@@ -39,4 +45,30 @@ public class Player {
     public void setBoard(Board board) {
         this.board = board;
     }
+    
+    public void setDoneSetup(Boolean done) {
+        doneSetup = done;
+    }
+
+    public boolean getDoneSetup() {
+        return doneSetup;
+    }
+
+    public int getShipsSunk() {
+        return shipsSunk;
+    }
+
+    public void setShipsSunk(int shipsSunk) {
+        this.shipsSunk = shipsSunk;
+    }
+
+    public int getHits() {
+        return hits;
+    }
+
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
+    
+    
 }
