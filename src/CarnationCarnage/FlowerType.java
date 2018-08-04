@@ -5,11 +5,11 @@ import java.awt.Point;
 
 public enum FlowerType {
   //Maps flowers with lengths
-    Rose("Rose", 5, "/CarnationCarnage/Flowers/Rose.png"),
-    Carnation("Carnation", 4, "/CarnationCarnage/Flowers/Carnationdl.png"),
-    Pansy("Pansy", 3, "/CarnationCarnage/Flowers/Pansy.jpg"),
-    Tulip("Tulip", 3, "/CarnationCarnage/Flowers/tulip.png"),
-    Daisy("Daisy", 2, "/CarnationCarnage/Flowers/Daisy.png");
+    Rose("Rose", 5, "/CarnationCarnage/Flowers/boardRose.png"),
+    Carnation("Carnation", 4, "/CarnationCarnage/Flowers/boardCarnation.png"),
+    Pansy("Pansy", 3, "/CarnationCarnage/Flowers/boardPansy.png"),
+    Tulip("Tulip", 3, "/CarnationCarnage/Flowers/boardTulip.png"),
+    Daisy("Daisy", 2, "/CarnationCarnage/Flowers/boardDaisy.png");
     
     private String name;
     private int length;

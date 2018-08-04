@@ -10,6 +10,7 @@ import java.util.Hashtable;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,7 +20,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
+import CarnationCarnage.FlowerType;
 
 public class SetupController {
     // This class displays a the setup screen
@@ -202,21 +205,30 @@ public class SetupController {
         // Check if it is a right click, and rotate if so.
         // the inbuilt rotate function seems to only spin the image and keeps
         // the hit-box the same
-        // so swap width and height instead. Might cause issues when images are
-        // different.
-        ImageView flower = ((ImageView) event.getTarget());
 
-        double oldHeight = flower.getFitHeight();
-        double oldWidth = flower.getFitWidth();
+    	ImageView flower = ((ImageView) event.getTarget());
 
-        if (event.getButton() == MouseButton.SECONDARY) {
-            flower.setFitHeight(oldWidth);
-            flower.setFitWidth(oldHeight);
+        Flower flowerRotated = imageToFlower.get(flower);
+        boolean vertical = flowerRotated.isOrientationIsVertical();
+        System.out.print(vertical);
+               
+        if (event.getButton() == MouseButton.SECONDARY) {      	
+        	if(vertical==false) {
+        	
+        	flower.getTransforms().add(new Rotate(90,20,20));             	
+        	
             // Update flower object
-            Flower flowerRotated = imageToFlower.get(flower);
+            flowerRotated = imageToFlower.get(flower);
             flowerRotated.setOrientationIsVertical(
-                    !flowerRotated.isOrientationIsVertical());
+                    !vertical);
         }
+        	else                 	
+                	flower.getTransforms().add(new Rotate(-90,20,20));             	             	
+                    // Update flower object
+                    flowerRotated = imageToFlower.get(flower);
+                    flowerRotated.setOrientationIsVertical(
+                            !vertical);              
+        }        
         event.consume();
     }
 

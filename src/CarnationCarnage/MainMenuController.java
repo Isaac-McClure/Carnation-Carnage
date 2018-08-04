@@ -29,7 +29,7 @@ public class MainMenuController extends Application{
         //Load scene
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(CarnationCarnageMain.class.getResource("/CarnationCarnage/FXMLFiles/PlayerCreationScreen.fxml"));        
-        BorderPane setupScreen = loader.load();
+        AnchorPane setupScreen = loader.load();
         
         //show scene
         Stage primaryStage = (Stage) mainMenuPane.getScene().getWindow();

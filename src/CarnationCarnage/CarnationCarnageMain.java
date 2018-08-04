@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +28,6 @@ public class CarnationCarnageMain extends Application{
     private BorderPane startScreen;
     private Scene startScene;
     private FXMLLoader loader = new FXMLLoader();
-
     
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -51,8 +49,7 @@ public class CarnationCarnageMain extends Application{
         primaryStage.show();
     }
        
-  
-    public static void main(String args[]) {
+      public static void main(String args[]) {
         launch(args);
     }
 }
