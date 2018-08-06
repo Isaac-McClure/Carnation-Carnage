@@ -55,8 +55,13 @@ public class Board {
     
         for(int i = 0; i < peicesRemaining.size(); i++) {
             if (peicesRemaining.get(i).checkShot(coordinate, real)) {
-                hits.add(new Point(x,y));
-                return peicesRemaining.get(i);
+                if (real) {
+                    hits.add(new Point(x,y));
+                    return peicesRemaining.get(i);
+                }
+                else {
+                    return peicesRemaining.get(i);
+                }
             };
         }
         

@@ -112,9 +112,9 @@ public class InGameController {
         ArrayList<ImageView> playerBoardmissImages = new ArrayList<>();
         setHitsAndMisses(player.getBoard(), playerBoard, playerBoardhitImages, playerBoardmissImages);
         
-        ArrayList<ImageView> guessBoardhitImages = new ArrayList<>();
-        ArrayList<ImageView> guessBoardmissImages = new ArrayList<>();
-        setHitsAndMisses(player.getOpponent().getBoard(), guessBoard, guessBoardhitImages, guessBoardmissImages);
+        ArrayList<ImageView> guessBoardHitImages = new ArrayList<>();
+        ArrayList<ImageView> guessBoardMissImages = new ArrayList<>();
+        setHitsAndMisses(player.getOpponent().getBoard(), guessBoard, guessBoardHitImages, guessBoardMissImages);
         
 
         for (Flower flower : player.getBoard().getPeicesRemaining()) {
