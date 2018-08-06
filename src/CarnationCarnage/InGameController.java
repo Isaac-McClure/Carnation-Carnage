@@ -34,6 +34,12 @@ public class InGameController {
     Label playersLabel;
     @FXML
     Label scoreLabel;
+    
+    double roseMultiplier = 1.15;
+    double carnationMultiplier = 1.12;
+    double pansyMultiplier = 1.09;
+    double tulipMultiplier = 1.06;
+    double daisyMultiplier = 1.03;
 
     ImageView roseImage;
     ImageView carnationImage;
@@ -61,6 +67,8 @@ public class InGameController {
     public void reInitialise() {
         // Set up graphics
         currentPlayerLabel.setText(player.getName() + "'s Turn to Play");
+        // set up score for each player. Set to zero at beginning of game.
+        scoreLabel.setText(player.getName() +"'s Score: " + String.format("%.0f", player.getScore()));
 
         // Set flowers in position with appropriate event handlers and
         // ImageViews
@@ -209,10 +217,41 @@ public class InGameController {
         Flower hitFlower = player.getOpponent().getBoard().takeHit(guess.x, guess.y, true);
         if (hitFlower != null) {
             player.setHits(player.getHits() + 1);
-            
+
+            // Below calculates multiplier for hits and adds to player score
+            switch (hitFlower.getType().toString()) {
+            case "Rose":
+            	player.setScore(player.getScore() + 3000 * roseMultiplier);
+            	System.out.println(player.getScore());
+            	break;
+            case "Carnation":
+            	player.setScore(player.getScore() + 3000 * carnationMultiplier);
+            	System.out.println(player.getScore());
+            	break;
+            case "Pansy":
+            	player.setScore(player.getScore() + 3000 * pansyMultiplier);
+            	System.out.println(player.getScore());
+            	break;
+            case "Tulip":
+            	player.setScore(player.getScore() + 3000 * tulipMultiplier);
+            	System.out.println(player.getScore());
+            	break;
+            case "Daisy":
+            	player.setScore(player.getScore() + 3000 * daisyMultiplier);
+            	System.out.println(player.getScore());
+            	break;
+            default:
+            	player.setScore(player.getScore() +3000);
+            	System.out.println(player.getScore());
+            }
             if(!player.getOpponent().getBoard().isFlowerAlive(hitFlower)) {
                 player.setShipsSunk(player.getShipsSunk() + 1);
             }
+        }
+        else {
+        	System.out.println("Cell missed");
+        	//removes 150 points from score if a miss
+        	player.setScore(player.getScore() - 150);
         }
         
         switchPlayer();

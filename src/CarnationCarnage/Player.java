@@ -34,6 +34,10 @@ public class Player {
         return score;
     }
     
+    public void setScore(Double score) {
+    	this.score=score;
+    }
+    
     public void setOpponent(Player inOpponent) {
         this.opponent = inOpponent;
     }
