@@ -6,6 +6,7 @@ public class Player {
     
     private double score;
     private int hits;
+    private int totalShots;
     private int shipsSunk;
     private Board board;
     private String name;
@@ -20,6 +21,7 @@ public class Player {
         doneSetup = false;
         setHits(0);
         setShipsSunk(0);
+        totalShots = 0;
     }
     
     public String getName() {
@@ -72,6 +74,14 @@ public class Player {
 
     public void setHits(int hits) {
         this.hits = hits;
+    }
+
+    public int getTotalShots() {
+        return totalShots;
+    }
+
+    public void setTotalShots(int totalShots) {
+        this.totalShots = totalShots;
     }
     
     

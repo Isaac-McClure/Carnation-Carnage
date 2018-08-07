@@ -14,11 +14,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 //Crosshair image Created by Creaticca Creative Agency on Flaticon.com
 public class InGameController {
-    // This class displays a the setup screen
+
     @FXML
     private AnchorPane inGamePane;
     @FXML
@@ -108,13 +109,8 @@ public class InGameController {
         imageToFlower.put(daisyImage, player.getBoard().getDaisy());
 
         // Place hits and misses on both boards
-        ArrayList<ImageView> playerBoardhitImages = new ArrayList<>();
-        ArrayList<ImageView> playerBoardmissImages = new ArrayList<>();
-        setHitsAndMisses(player.getBoard(), playerBoard, playerBoardhitImages, playerBoardmissImages);
-        
-        ArrayList<ImageView> guessBoardHitImages = new ArrayList<>();
-        ArrayList<ImageView> guessBoardMissImages = new ArrayList<>();
-        setHitsAndMisses(player.getOpponent().getBoard(), guessBoard, guessBoardHitImages, guessBoardMissImages);
+        setHitsAndMisses(player.getBoard(), playerBoard);
+        setHitsAndMisses(player.getOpponent().getBoard(), guessBoard);
         
 
         for (Flower flower : player.getBoard().getPeicesRemaining()) {
@@ -207,13 +203,16 @@ public class InGameController {
         }
     }
     
-    public void fireClicked() throws IOException {
+    public void fireClicked() throws Throwable {
+        // TODO tell the user if they didn't select a target
         System.out.println("FIRE");
         if (guess == null) {
 
             System.out.println("No Guess");
             return;
         }
+        
+        player.setTotalShots(player.getTotalShots() + 1);
         Flower hitFlower = player.getOpponent().getBoard().takeHit(guess.x, guess.y, true);
         if (hitFlower != null) {
             player.setHits(player.getHits() + 1);
@@ -247,19 +246,43 @@ public class InGameController {
             if(!player.getOpponent().getBoard().isFlowerAlive(hitFlower)) {
                 player.setShipsSunk(player.getShipsSunk() + 1);
             }
+            
+            // Check if the player won
+            if(player.getOpponent().getBoard().isGameOver()) {
+                // If they have end the game by launching score screen
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(CarnationCarnageMain.class
+                        .getResource("/CarnationCarnage/FXMLFiles/GameOverScreen.fxml"));
+                BorderPane GameOverScreen = loader.load();
+
+                // TODO Pass other player through to game scene
+                GameOverController controller = loader.<GameOverController>getController();
+                controller.reInitialize(player);
+
+                // Show scene
+                Stage primaryStage = (Stage) inGamePane.getScene().getWindow();
+                primaryStage.setScene(new Scene(GameOverScreen));
+                
+            }
+            // Place hits and misses on both boards
+            setHitsAndMisses(player.getBoard(), playerBoard);
+            setHitsAndMisses(player.getOpponent().getBoard(), guessBoard);
+            
         }
         else {
         	System.out.println("Cell missed");
         	//removes 150 points from score if a miss
         	player.setScore(player.getScore() - 150);
+        	// Turn is over if you miss
+            switchPlayer();
         }
-        
-        switchPlayer();
     }
     
-    public void setHitsAndMisses(Board board, GridPane gridPane, ArrayList<ImageView> hitImages, ArrayList<ImageView> missImages) {
+    public void setHitsAndMisses(Board board, GridPane gridPane) {
         
 
+        ArrayList<ImageView> hitImages = new ArrayList<>();
+        ArrayList<ImageView> missImages = new ArrayList<>();
         ArrayList<Point> hits = board.getHits();
         ArrayList<Point> misses = board.getMisses();
         

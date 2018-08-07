@@ -52,15 +52,24 @@ public class Board {
     public Flower takeHit(int x, int y, boolean real) {
         // Checks an incoming shot to see what was hit
         Point coordinate = new Point(x,y); 
-    
+        
+        // If that coordinate has already been shot do nothing
+        if(hits.contains(coordinate) || misses.contains(coordinate)) {
+            return null;
+        }
+        
         for(int i = 0; i < peicesRemaining.size(); i++) {
             if (peicesRemaining.get(i).checkShot(coordinate, real)) {
+                Flower hitFlower = peicesRemaining.get(i);
                 if (real) {
                     hits.add(new Point(x,y));
-                    return peicesRemaining.get(i);
+                    if(!isFlowerAlive(hitFlower)) {
+                        peicesRemaining.remove(hitFlower);
+                    }
+                    return hitFlower;
                 }
                 else {
-                    return peicesRemaining.get(i);
+                    return hitFlower;
                 }
             };
         }
@@ -70,6 +79,10 @@ public class Board {
             misses.add(new Point(x,y));
             }
         return null;
+    }
+    
+    public boolean isGameOver() {
+       return peicesRemaining.isEmpty();
     }
     
     public boolean isFlowerAlive(Flower flower) {

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="CarnationCarnage.GameOverController">
+   <center>
+      <AnchorPane fx:id="gameOverPane" prefHeight="550.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="33.0" prefHeight="46.0" prefWidth="451.0" text="Title">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="continueButton" layoutX="453.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#continueClicked" text="Continue" />
+            <Label fx:id="winnerLabel" layoutX="200.0" layoutY="172.0" prefHeight="35.0" prefWidth="225.0" text="Player One:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="loserLabel" layoutX="711.0" layoutY="172.0" prefHeight="35.0" prefWidth="225.0" text="Player Two">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="winnerScoreLabel" layoutX="313.0" layoutY="219.0" prefHeight="17.0" prefWidth="158.0" text="Score" />
+            <Label fx:id="loserScoreLabel" layoutX="813.0" layoutY="220.0" prefHeight="17.0" prefWidth="160.0" text="Score" />
+            <Label fx:id="winnerHitRateLabel" layoutX="313.0" layoutY="249.0" prefHeight="17.0" prefWidth="133.0" text="Hit Rate" />
+            <Label fx:id="loserHitRateLabel" layoutX="813.0" layoutY="249.0" prefHeight="17.0" prefWidth="160.0" text="Hit Rate: " />
+            <Label layoutX="200.0" layoutY="219.0" prefHeight="17.0" prefWidth="39.0" text="Score:" />
+            <Label layoutX="200.0" layoutY="249.0" prefHeight="17.0" prefWidth="63.0" text="Hit Rate:" />
+            <Label layoutX="711.0" layoutY="249.0" prefHeight="17.0" prefWidth="63.0" text="Hit Rate:" />
+            <Label layoutX="711.0" layoutY="220.0" prefHeight="17.0" prefWidth="39.0" text="Score:" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
