@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
 //Crosshair image Created by Creaticca Creative Agency on Flaticon.com
 public class InGameController {
 
@@ -35,7 +36,7 @@ public class InGameController {
     Label playersLabel;
     @FXML
     Label scoreLabel;
-    
+
     double roseMultiplier = 1.15;
     double carnationMultiplier = 1.12;
     double pansyMultiplier = 1.09;
@@ -51,6 +52,10 @@ public class InGameController {
     ImageView crosshair = null;
 
     private Player player;
+    
+    private boolean hidden = true;
+    @FXML
+    Label hiddenLabel;
 
     // TODO decide whether this is needed or not
     private Hashtable<ImageView, Flower> imageToFlower = new Hashtable<ImageView, Flower>();
@@ -69,7 +74,8 @@ public class InGameController {
         // Set up graphics
         currentPlayerLabel.setText(player.getName() + "'s Turn to Play");
         // set up score for each player. Set to zero at beginning of game.
-        scoreLabel.setText(player.getName() +"'s Score: " + String.format("%.0f", player.getScore()));
+        scoreLabel.setText(player.getName() + "'s Score: "
+                + String.format("%.0f", player.getScore()));
 
         // Set flowers in position with appropriate event handlers and
         // ImageViews
@@ -111,12 +117,12 @@ public class InGameController {
         // Place hits and misses on both boards
         setHitsAndMisses(player.getBoard(), playerBoard);
         setHitsAndMisses(player.getOpponent().getBoard(), guessBoard);
-        
 
+        // hides flowers at the start of the turn
         for (Flower flower : player.getBoard().getPeicesRemaining()) {
-            flower.getIcon().setVisible(!flower.getIcon().isVisible());
+            flower.getIcon().setVisible(false);
+            hiddenLabel.setText("The peices are currently hidden");
         }
-             
 
     }
 
@@ -177,8 +183,15 @@ public class InGameController {
 
     // sets all pieces to invisible
     public void showHideBoardClicked() {
+        hidden = !hidden;
         for (Flower flower : player.getBoard().getPeicesRemaining()) {
-            flower.getIcon().setVisible(!flower.getIcon().isVisible());
+            flower.getIcon().setVisible(!flower.getIcon().isVisible()); 
+            if(hidden) {
+                hiddenLabel.setText("The peices are currently hidden");
+            }
+            else {
+                hiddenLabel.setText("");
+            }
         }
     }
 
@@ -202,7 +215,7 @@ public class InGameController {
             crosshair.setVisible(true);
         }
     }
-    
+
     public void fireClicked() throws Throwable {
         // TODO tell the user if they didn't select a target
         System.out.println("FIRE");
@@ -211,103 +224,127 @@ public class InGameController {
             System.out.println("No Guess");
             return;
         }
-        
+
         player.setTotalShots(player.getTotalShots() + 1);
-        Flower hitFlower = player.getOpponent().getBoard().takeHit(guess.x, guess.y, true);
+        Flower hitFlower = player.getOpponent().getBoard().takeHit(guess.x,
+                guess.y, true);
         if (hitFlower != null) {
             player.setHits(player.getHits() + 1);
 
             // Below calculates multiplier for hits and adds to player score
             switch (hitFlower.getType().toString()) {
             case "Rose":
-            	player.setScore(player.getScore() + 3000 * roseMultiplier);
-            	System.out.println(player.getScore());
-            	break;
+                player.setScore(player.getScore() + 3000 * roseMultiplier);
+                System.out.println(player.getScore());
+                break;
             case "Carnation":
-            	player.setScore(player.getScore() + 3000 * carnationMultiplier);
-            	System.out.println(player.getScore());
-            	break;
+                player.setScore(player.getScore() + 3000 * carnationMultiplier);
+                System.out.println(player.getScore());
+                break;
             case "Pansy":
-            	player.setScore(player.getScore() + 3000 * pansyMultiplier);
-            	System.out.println(player.getScore());
-            	break;
+                player.setScore(player.getScore() + 3000 * pansyMultiplier);
+                System.out.println(player.getScore());
+                break;
             case "Tulip":
-            	player.setScore(player.getScore() + 3000 * tulipMultiplier);
-            	System.out.println(player.getScore());
-            	break;
+                player.setScore(player.getScore() + 3000 * tulipMultiplier);
+                System.out.println(player.getScore());
+                break;
             case "Daisy":
-            	player.setScore(player.getScore() + 3000 * daisyMultiplier);
-            	System.out.println(player.getScore());
-            	break;
+                player.setScore(player.getScore() + 3000 * daisyMultiplier);
+                System.out.println(player.getScore());
+                break;
             default:
-            	player.setScore(player.getScore() +3000);
-            	System.out.println(player.getScore());
-            }
-            if(!player.getOpponent().getBoard().isFlowerAlive(hitFlower)) {
-                player.setShipsSunk(player.getShipsSunk() + 1);
+                player.setScore(player.getScore() + 3000);
+                System.out.println(player.getScore());
             }
             
+            if (!player.getOpponent().getBoard().isFlowerAlive(hitFlower)) {
+                player.setShipsSunk(player.getShipsSunk() + 1);
+                hitFlower.getIcon().setVisible(false);
+            }
+
             // Check if the player won
-            if(player.getOpponent().getBoard().isGameOver()) {
+            if (player.getOpponent().getBoard().isGameOver()) {
                 // If they have end the game by launching score screen
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(CarnationCarnageMain.class
-                        .getResource("/CarnationCarnage/FXMLFiles/GameOverScreen.fxml"));
-                BorderPane GameOverScreen = loader.load();
-
-                // TODO Pass other player through to game scene
-                GameOverController controller = loader.<GameOverController>getController();
-                controller.reInitialize(player);
-
-                // Show scene
-                Stage primaryStage = (Stage) inGamePane.getScene().getWindow();
-                primaryStage.setScene(new Scene(GameOverScreen));
-                
+                launchGameOver(player);
             }
             // Place hits and misses on both boards
             setHitsAndMisses(player.getBoard(), playerBoard);
             setHitsAndMisses(player.getOpponent().getBoard(), guessBoard);
-            
-        }
-        else {
-        	System.out.println("Cell missed");
-        	//removes 150 points from score if a miss
-        	player.setScore(player.getScore() - 150);
-        	// Turn is over if you miss
+
+        } else {
+            System.out.println("Cell missed");
+            // removes 150 points from score if a miss
+            player.setScore(player.getScore() - 150);
+            // Turn is over if you miss
             switchPlayer();
         }
     }
-    
+
     public void setHitsAndMisses(Board board, GridPane gridPane) {
-        
 
         ArrayList<ImageView> hitImages = new ArrayList<>();
         ArrayList<ImageView> missImages = new ArrayList<>();
         ArrayList<Point> hits = board.getHits();
         ArrayList<Point> misses = board.getMisses();
-        
-        for(int i = 0; i < hits.size(); i++) {
+
+        for (int i = 0; i < hits.size(); i++) {
             hitImages.add(new ImageView(board.getHitImage()));
             hitImages.get(i).setFitHeight(40);
             hitImages.get(i).setFitWidth(40);
-            hitImages.get(i).setLayoutX((hits.get(i).x * 40) +(gridAnchorPane.getLayoutX() + gridPane.getLayoutX()));
-            hitImages.get(i).setLayoutY((hits.get(i).y * 40) +(gridAnchorPane.getLayoutY() + gridPane.getLayoutY()));
+            hitImages.get(i).setLayoutX((hits.get(i).x * 40)
+                    + (gridAnchorPane.getLayoutX() + gridPane.getLayoutX()));
+            hitImages.get(i).setLayoutY((hits.get(i).y * 40)
+                    + (gridAnchorPane.getLayoutY() + gridPane.getLayoutY()));
             inGamePane.getChildren().add(hitImages.get(i));
         }
-        
-        for(int i = 0; i < misses.size(); i++) {
+
+        for (int i = 0; i < misses.size(); i++) {
             missImages.add(new ImageView(board.getMissImage()));
             missImages.get(i).setFitHeight(40);
             missImages.get(i).setFitWidth(40);
-            missImages.get(i).setLayoutX((misses.get(i).x * 40) +(gridAnchorPane.getLayoutX() + gridPane.getLayoutX()));
-            missImages.get(i).setLayoutY((misses.get(i).y * 40) +(gridAnchorPane.getLayoutY() + gridPane.getLayoutY()));
+            missImages.get(i).setLayoutX((misses.get(i).x * 40)
+                    + (gridAnchorPane.getLayoutX() + gridPane.getLayoutX()));
+            missImages.get(i).setLayoutY((misses.get(i).y * 40)
+                    + (gridAnchorPane.getLayoutY() + gridPane.getLayoutY()));
             inGamePane.getChildren().add(missImages.get(i));
         }
-        
+
     }
-    
+
     public void switchPlayer() throws IOException {
-        // TODO add timer or something so you can see your shot before it swaps player
+        // TODO add timer or something so you can see your shot before it swaps
+        // player
         launchGame();
+    }
+
+    public void skipClicked() throws IOException {
+        // Event handler for skip button
+        switchPlayer();
+    }
+
+    public void surrenderClicked() throws IOException {
+        // Event handler for surrender button
+        // Causes current player to lose
+        launchGameOver(player.getOpponent());
+
+    }
+
+    public void launchGameOver(Player winningPlayer) throws IOException {
+        // Launches game over screen
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(CarnationCarnageMain.class.getResource(
+                "/CarnationCarnage/FXMLFiles/GameOverScreen.fxml"));
+        BorderPane GameOverScreen = loader.load();
+
+        // TODO Pass other player through to game scene
+        GameOverController controller = loader
+                .<GameOverController>getController();
+        controller.reInitialize(winningPlayer);
+
+        // Show scene
+        Stage primaryStage = (Stage) inGamePane.getScene().getWindow();
+        primaryStage.setScene(new Scene(GameOverScreen));
+
     }
 }

@@ -33,8 +33,8 @@ public class GameOverController {
     public void continueClicked() throws IOException {
         // Returns to main menu
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(CarnationCarnageMain.class.getResource(
-                "/CarnationCarnage/FXMLFiles/MainMenu.fxml"));
+        loader.setLocation(CarnationCarnageMain.class
+                .getResource("/CarnationCarnage/FXMLFiles/MainMenu.fxml"));
         BorderPane mainMenu = loader.load();
 
         // show scene
@@ -47,17 +47,27 @@ public class GameOverController {
         titleLabel.setText(winner.getName() + " Wins!!!");
         winnerLabel.setText(winner.getName() + ":");
         winnerScoreLabel.setText(String.valueOf(winner.getScore()));
-        winnerHitRateLabel.setText(String.valueOf(winner.getHits() / winner.getTotalShots()));
-        
+        try {
+            // winning without firing a shot causes an arithmetic error, occurs
+            // when other player
+            // surrenders on first turn.
+            winnerHitRateLabel.setText(
+                    String.valueOf(winner.getHits() / winner.getTotalShots()));
+        }
+
+        catch (ArithmeticException e) {
+            winnerHitRateLabel.setText("0");
+        }
+
         // set up the loser labels
         Player loser = winner.getOpponent();
         loserLabel.setText(loser.getName() + ":");
         loserScoreLabel.setText(String.valueOf(loser.getScore()));
         try {
-        // if the winner wins in one turn it can cause division by 0
-            loserHitRateLabel.setText(String.valueOf(loser.getHits() / loser.getTotalShots()));
-        }
-        catch(ArithmeticException e) {
+            // if the winner wins in one turn it can cause division by 0
+            loserHitRateLabel.setText(
+                    String.valueOf(loser.getHits() / loser.getTotalShots()));
+        } catch (ArithmeticException e) {
             loserHitRateLabel.setText("0");
         }
     }
