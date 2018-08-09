@@ -157,8 +157,8 @@
       </AnchorPane>
       <Button fx:id="hideBoardButton" layoutX="850.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#showHideBoardClicked" prefHeight="57.0" prefWidth="150.0" text="Show/Hide Board" />
       <Button fx:id="fireButton" layoutX="850.0" layoutY="157.0" mnemonicParsing="false" onMouseClicked="#fireClicked" prefHeight="57.0" prefWidth="150.0" text="Fire" />
-      <Button fx:id="skipButton" layoutX="850.0" layoutY="214.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="150.0" text="Skip" />
-      <Button fx:id="surrenderButton" layoutX="850.0" layoutY="271.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="150.0" text="Surrender" />
+      <Button fx:id="skipButton" layoutX="850.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#skipClicked" prefHeight="57.0" prefWidth="150.0" text="Skip" />
+      <Button fx:id="surrenderButton" layoutX="850.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#surrenderClicked" prefHeight="57.0" prefWidth="150.0" text="Surrender" />
       <Label fx:id="currentPlayerLabel" alignment="CENTER" prefHeight="93.0" prefWidth="597.0" text="Playername's turn" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font size="64.0" />
@@ -175,5 +175,6 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Label fx:id="hiddenLabel" layoutY="76.0" prefHeight="17.0" prefWidth="188.0" />
    </children>
 </AnchorPane>
