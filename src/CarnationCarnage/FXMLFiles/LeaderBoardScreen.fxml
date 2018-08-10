@@ -144,5 +144,6 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </GridPane>
+      <Button fx:id="loadButton" layoutX="157.0" layoutY="529.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="124.0" text="Load" />
    </children>
 </AnchorPane>

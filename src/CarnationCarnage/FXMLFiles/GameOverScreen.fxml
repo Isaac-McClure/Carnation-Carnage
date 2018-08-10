@@ -6,36 +6,60 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="CarnationCarnage.GameOverController">
-   <center>
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.GameOverController">
+   <bottom>
       <AnchorPane fx:id="gameOverPane" prefHeight="550.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="33.0" prefHeight="46.0" prefWidth="451.0" text="Title">
+            <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="33.0" prefHeight="102.0" prefWidth="551.0" text="Game Over">
                <font>
-                  <Font size="48.0" />
+                  <Font name="Franklin Gothic Demi Cond" size="48.0" />
                </font>
             </Label>
-            <Button fx:id="continueButton" layoutX="453.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#continueClicked" text="Continue" />
-            <Label fx:id="winnerLabel" layoutX="200.0" layoutY="172.0" prefHeight="35.0" prefWidth="225.0" text="Player One:">
+            <Button fx:id="continueButton" layoutX="310.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#continueClicked" text="Continue" />
+            <Label fx:id="winnerLabel" layoutX="155.0" layoutY="172.0" prefHeight="35.0" prefWidth="225.0" text="Player One:">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Franklin Gothic Book" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="loserLabel" layoutX="711.0" layoutY="172.0" prefHeight="35.0" prefWidth="225.0" text="Player Two">
+            <Label fx:id="loserLabel" layoutX="615.0" layoutY="172.0" prefHeight="35.0" prefWidth="225.0" text="Player Two:">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Franklin Gothic Book" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="winnerScoreLabel" layoutX="313.0" layoutY="219.0" prefHeight="17.0" prefWidth="158.0" text="Score" />
-            <Label fx:id="loserScoreLabel" layoutX="813.0" layoutY="220.0" prefHeight="17.0" prefWidth="160.0" text="Score" />
-            <Label fx:id="winnerHitRateLabel" layoutX="313.0" layoutY="249.0" prefHeight="17.0" prefWidth="133.0" text="Hit Rate" />
-            <Label fx:id="loserHitRateLabel" layoutX="813.0" layoutY="249.0" prefHeight="17.0" prefWidth="160.0" text="Hit Rate: " />
-            <Label layoutX="200.0" layoutY="219.0" prefHeight="17.0" prefWidth="39.0" text="Score:" />
-            <Label layoutX="200.0" layoutY="249.0" prefHeight="17.0" prefWidth="63.0" text="Hit Rate:" />
-            <Label layoutX="711.0" layoutY="249.0" prefHeight="17.0" prefWidth="63.0" text="Hit Rate:" />
-            <Label layoutX="711.0" layoutY="220.0" prefHeight="17.0" prefWidth="39.0" text="Score:" />
+            <Label fx:id="winnerScoreLabel" layoutX="342.0" layoutY="219.0" prefHeight="17.0" prefWidth="158.0" text="Score">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label fx:id="loserScoreLabel" layoutX="766.0" layoutY="219.0" prefHeight="17.0" prefWidth="160.0" text="Score">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label fx:id="winnerHitRateLabel" layoutX="342.0" layoutY="291.0" prefHeight="17.0" prefWidth="133.0" text="Hit Rate">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label fx:id="loserHitRateLabel" layoutX="760.0" layoutY="291.0" prefHeight="17.0" prefWidth="160.0" text="Hit Rate: ">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label layoutX="155.0" layoutY="219.0" prefHeight="24.0" prefWidth="143.0" text="Score:">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label layoutX="155.0" layoutY="291.0" prefHeight="24.0" prefWidth="122.0" text="Hit Rate:">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label layoutX="615.0" layoutY="291.0" prefHeight="25.0" prefWidth="109.0" text="Hit Rate:">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Label layoutX="615.0" layoutY="219.0" prefHeight="27.0" prefWidth="93.0" text="Score:">
+               <font>
+                  <Font name="Franklin Gothic Book" size="24.0" />
+               </font></Label>
+            <Button fx:id="saveButton" layoutX="605.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#saveClicked" text="Save" />
          </children>
       </AnchorPane>
-   </center>
+   </bottom>
 </BorderPane>

@@ -4,6 +4,7 @@
  */
 package CarnationCarnage;
 
+import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -13,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 //Controller class for GameOverController.fxml
@@ -40,6 +43,27 @@ public class GameOverController {
         // show scene
         Stage primaryStage = (Stage) gameOverPane.getScene().getWindow();
         primaryStage.setScene(new Scene(mainMenu));
+    }
+    
+    @FXML
+    public void saveClicked() throws IOException {
+        FileChooser fileChooser = new FileChooser();
+
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Show save file dialog
+        File file = fileChooser.showSaveDialog(null);
+
+        if(file != null){
+            SaveFile(file);
+        }
+    }
+
+    private void SaveFile(File file) {
+        // TODO Auto-generated method stub
+        
     }
 
     public void reInitialize(Player winner) {
