@@ -38,12 +38,13 @@ public class SetupController {
     ImageView pansyImage;
     ImageView tulipImage;
     ImageView daisyImage;
-
+    
     Point roseDefaultPosition;
     Point carnationDefaultPosition;
     Point pansyDefaultPosition;
     Point tulipDefaultPosition;
     Point daisyDefaultPosition;
+    Point aliveDefaultPosition;
 
     @FXML
     GridPane setupGrid;
@@ -54,11 +55,12 @@ public class SetupController {
     private Hashtable<ImageView, Point> imageToDefaultPosition = new Hashtable<ImageView, Point>();
 
     public void initialize() {
-        roseDefaultPosition = new Point(700, 120);
-        carnationDefaultPosition = new Point(700, 165);
-        pansyDefaultPosition = new Point(700, 210);
-        tulipDefaultPosition = new Point(700, 255);
-        daisyDefaultPosition = new Point(700, 300);
+        roseDefaultPosition = new Point(700, 140);
+        carnationDefaultPosition = new Point(700, 195);
+        pansyDefaultPosition = new Point(700, 250);
+        tulipDefaultPosition = new Point(700, 310);
+        daisyDefaultPosition = new Point(700, 370);
+        aliveDefaultPosition = new Point(25, 19);
     }
 
     // This method is called after initialize so we can pass in player first
