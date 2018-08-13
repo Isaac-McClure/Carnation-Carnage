@@ -1,0 +1,5 @@
+Twilight Sparkle,300
+Princess Unicorn,50
+Bob,20
+Glitterpants,50
+Spongebob,5
