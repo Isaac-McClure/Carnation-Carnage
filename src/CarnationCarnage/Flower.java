@@ -68,8 +68,8 @@ public class Flower {
         return orientationIsVertical;
     }
 
-    public void setOrientationIsVertical(boolean orientationIsVertical) {
-        this.orientationIsVertical = orientationIsVertical;
+    public void setOrientationIsVertical(boolean inOrientationIsVertical) {
+        this.orientationIsVertical = inOrientationIsVertical;
     }
         
     public FlowerType getType() {
