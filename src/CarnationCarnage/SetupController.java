@@ -38,7 +38,7 @@ public class SetupController {
     ImageView pansyImage;
     ImageView tulipImage;
     ImageView daisyImage;
-    
+
     Point roseDefaultPosition;
     Point carnationDefaultPosition;
     Point pansyDefaultPosition;
@@ -175,12 +175,14 @@ public class SetupController {
     // Launches the inGameScene
     private void launchGame() throws IOException {
         // clear flower event handlers
-        ArrayList<Flower> flowersToClear = new ArrayList<>(player.getBoard().getPeicesRemaining());
-        flowersToClear.addAll(player.getOpponent().getBoard().getPeicesRemaining());
-        for(Flower flowerToClear: flowersToClear) {
+        ArrayList<Flower> flowersToClear = new ArrayList<>(
+                player.getBoard().getPeicesRemaining());
+        flowersToClear
+                .addAll(player.getOpponent().getBoard().getPeicesRemaining());
+        for (Flower flowerToClear : flowersToClear) {
             flowerToClear.clearImageConfig();
         }
-        
+
         // Load Scene
         System.out.println("LAUNCH GAME");
         FXMLLoader loader = new FXMLLoader();
@@ -208,29 +210,31 @@ public class SetupController {
         // the inbuilt rotate function seems to only spin the image and keeps
         // the hit-box the same
 
-    	ImageView flower = ((ImageView) event.getTarget());
+        ImageView flower = ((ImageView) event.getTarget());
 
         Flower flowerRotated = imageToFlower.get(flower);
         boolean vertical = flowerRotated.isOrientationIsVertical();
-        System.out.print(vertical);
-               
-        if (event.getButton() == MouseButton.SECONDARY) {      	
-        	if(vertical==false) {
-        	
-        	flower.getTransforms().add(new Rotate(90,20,20));             	
-        	
-            // Update flower object
-            flowerRotated = imageToFlower.get(flower);
-            flowerRotated.setOrientationIsVertical(
-                    !vertical);
+        System.out.print("From: " + vertical);
+
+        if (event.getButton() == MouseButton.SECONDARY) {
+            if (vertical == false) {
+
+                flower.getTransforms().add(new Rotate(90, 20, 20));
+
+                // Update flower object
+                flowerRotated.setOrientationIsVertical(!vertical);
+
+                System.out.println("To: " + flowerRotated.isOrientationIsVertical());
+                
+            } else {
+                flower.getTransforms().add(new Rotate(-90, 20, 20));
+                // Update flower object
+                flowerRotated.setOrientationIsVertical(!vertical);
+
+                System.out.println("To: " + flowerRotated.isOrientationIsVertical());
+            }
         }
-        	else                 	
-                	flower.getTransforms().add(new Rotate(-90,20,20));             	             	
-                    // Update flower object
-                    flowerRotated = imageToFlower.get(flower);
-                    flowerRotated.setOrientationIsVertical(
-                            !vertical);              
-        }        
+        flowerDragDroppedEvent(event);
         event.consume();
     }
 
@@ -259,18 +263,21 @@ public class SetupController {
 
         // add positions to the list
         ArrayList<Point> positions = new ArrayList<Point>();
-        if (flowerDropped.isOrientationIsVertical()) {
+        
+        if (flowerDropped.isOrientationIsVertical() == true) {
             // if vertical add length downwards for each position
             for (int i = 0; i < flowerDropped.getType().getLength(); i++) {
                 positions.add(new Point(gridX, gridY + i));
             }
-        } else {
-            // if vertical add length sideways for each position
+        } 
+        else {
+            // if horizontal add length sideways for each position
             for (int i = 0; i < flowerDropped.getType().getLength(); i++) {
                 positions.add(new Point(gridX + i, gridY));
             }
         }
 
+        System.out.println("Results: " + positions);
         // clear any previous positions, set it to an invalid position
         // to force reset if placement is invalid
         ArrayList<Point> defaultGridPosition = new ArrayList<Point>();
@@ -302,9 +309,10 @@ public class SetupController {
     @FXML
     public void flowerDragOverEvent(MouseEvent event) {
         // Moves the flower with the mouse
-        ((Node) event.getTarget()).setLayoutX(event.getSceneX());
-        ((Node) event.getTarget()).setLayoutY(event.getSceneY());
-
+        if (event.getButton() != MouseButton.SECONDARY) {
+            ((Node) event.getTarget()).setLayoutX(event.getSceneX());
+            ((Node) event.getTarget()).setLayoutY(event.getSceneY());
+        }
     }
 
     // Returns true if pieces are valid
