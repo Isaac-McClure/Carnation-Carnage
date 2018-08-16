@@ -33,7 +33,7 @@ public class Player {
     }
     
     public double getScore() {
-        return score;
+        return this.score;
     }
     
     public void setScore(Double score) {

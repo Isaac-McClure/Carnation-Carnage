@@ -17,6 +17,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -33,7 +34,8 @@ public class CarnationCarnageMain extends Application{
     public void start(Stage primaryStage) throws IOException {
         //initialize stage
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Carnation Carnage");      
+        this.primaryStage.setTitle("Carnation Carnage");  
+        this.primaryStage.getIcons().add(new Image("CarnationCarnage/Flowers/Poppy.png")); 
         showMainView();
     }
     

@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Leader" prefHeight="555.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.LeaderBoardController">
+<AnchorPane fx:id="Leader" prefHeight="555.0" prefWidth="922.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.LeaderBoardController">
    <children>
-      <ImageView fitHeight="577.0" fitWidth="931.0" nodeOrientation="INHERIT" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="560.0" fitWidth="922.0" opacity="0.3">
          <image>
-            <Image url="@../Images/BackgroundScore.jpg" />
+            <Image url="@../Images/burning%20background.jpg" />
          </image>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
       </ImageView>
       <Label layoutX="275.0" layoutY="24.0" text="Leader Board">
          <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
+            <LinearGradient endX="0.5285714285714286" endY="1.0" startX="0.5428571428571428" startY="0.04285714285714287">
                <stops>
                   <Stop color="#ae1313" />
-                  <Stop color="#4836ff" offset="1.0" />
+                  <Stop color="#f24e0d" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -39,111 +35,31 @@
          </image>
       </ImageView>
       <Button layoutX="21.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="31.0" prefWidth="107.0" text="Back" />
-      <GridPane layoutX="371.0" layoutY="114.0" prefHeight="432.0" prefWidth="520.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="76.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="225.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="208.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label prefHeight="65.0" prefWidth="88.0" text="#1" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Algerian" size="58.0" />
-               </font>
-            </Label>
-            <Label prefHeight="65.0" prefWidth="88.0" text="#2" GridPane.rowIndex="2">
-               <font>
-                  <Font name="Algerian" size="58.0" />
-               </font>
-            </Label>
-            <Label prefHeight="65.0" prefWidth="91.0" text="#3" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Algerian" size="58.0" />
-               </font>
-            </Label>
-            <Label prefHeight="65.0" prefWidth="89.0" text="#5" GridPane.rowIndex="5">
-               <font>
-                  <Font name="Algerian" size="58.0" />
-               </font>
-            </Label>
-            <Label prefHeight="65.0" prefWidth="87.0" text="#4" GridPane.rowIndex="4">
-               <font>
-                  <Font name="Algerian" size="58.0" />
-               </font>
-            </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" textAlignment="CENTER" wrappingWidth="226.42000198364258" GridPane.columnIndex="1">
-               <font>
-                  <Font name="AR DELANEY" size="57.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SCORE" textAlignment="CENTER" wrappingWidth="208.42000198364258" GridPane.columnIndex="2">
-               <font>
-                  <Font name="AR DELANEY" size="57.0" />
-               </font>
-            </Text>
-            <Label fx:id="name1" alignment="CENTER" prefHeight="62.0" prefWidth="234.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="name2" alignment="CENTER" prefHeight="62.0" prefWidth="232.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="name3" alignment="CENTER" prefHeight="62.0" prefWidth="231.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="name4" alignment="CENTER" prefHeight="62.0" prefWidth="232.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="name5" alignment="CENTER" prefHeight="62.0" prefWidth="233.0" text="A A A" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="score1" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="score2" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="score3" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="score4" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-            <Label fx:id="score5" alignment="CENTER" prefHeight="62.0" prefWidth="210.0" text="0000" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
-               <font>
-                  <Font name="AR JULIAN" size="53.0" />
-               </font>
-            </Label>
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </GridPane>
       <Button fx:id="loadButton" layoutX="157.0" layoutY="529.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="124.0" text="Load" />
+      <Label fx:id="highScoreName" layoutX="597.0" layoutY="117.0" prefHeight="420.0" prefWidth="302.0" text="Name">
+         <font>
+            <Font size="60.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.6" endY="0.4571428571428572" startX="0.28095238095238095">
+               <stops>
+                  <Stop color="#e57e04" />
+                  <Stop color="#ffae00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Label fx:id="highScore" layoutX="399.0" layoutY="117.0" prefHeight="420.0" prefWidth="124.0" text="Score" textAlignment="CENTER">
+         <font>
+            <Font size="60.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.6" endY="0.4571428571428572" startX="0.28095238095238095">
+               <stops>
+                  <Stop color="#e57e04" />
+                  <Stop color="#ffae00" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
    </children>
 </AnchorPane>
