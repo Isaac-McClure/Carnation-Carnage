@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Leader" prefHeight="555.0" prefWidth="922.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.LeaderBoardController">
+<AnchorPane fx:id="Leader" prefHeight="555.0" prefWidth="1000.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.LeaderBoardController">
    <children>
       <ImageView fitHeight="560.0" fitWidth="922.0" opacity="0.3">
          <image>
@@ -34,9 +37,21 @@
             <Image url="@../Images/1.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="21.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="31.0" prefWidth="107.0" text="Back" />
-      <Button fx:id="loadButton" layoutX="157.0" layoutY="529.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="124.0" text="Load" />
-      <Label fx:id="highScoreName" layoutX="597.0" layoutY="117.0" prefHeight="420.0" prefWidth="302.0" text="Name">
+      <Button alignment="CENTER" layoutX="103.0" layoutY="462.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="55.0" prefWidth="139.0" text="Back">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Lighting bumpInput="$null" diffuseConstant="1.49" specularConstant="0.65" specularExponent="24.19" surfaceScale="9.76">
+               <light>
+                  <Light.Distant azimuth="78.49" color="#ffae00" />
+               </light>
+            </Lighting>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="highScoreName" layoutX="649.0" layoutY="117.0" prefHeight="420.0" prefWidth="302.0" text="Name">
          <font>
             <Font size="60.0" />
          </font>
@@ -48,7 +63,7 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-      <Label fx:id="highScore" layoutX="399.0" layoutY="117.0" prefHeight="420.0" prefWidth="124.0" text="Score" textAlignment="CENTER">
+      <Label fx:id="highScore" layoutX="375.0" layoutY="117.0" prefHeight="420.0" prefWidth="213.0" text="Score" textAlignment="CENTER">
          <font>
             <Font size="60.0" />
          </font>

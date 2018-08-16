@@ -3,6 +3,8 @@ package CarnationCarnage;
 import java.io.*;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
+
 import javax.swing.JOptionPane;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -37,10 +39,11 @@ public class LeaderBoardController extends Application {
 		int i = 0;
 		highScoreList = "";
 		highScoreNameList = "";
+		
 		while ((line = reader.readLine()) != null && i < 5) {
 			System.out.println(line);
 
-			highScoreList += Double.parseDouble(line.substring(line.indexOf(",") + 1)) + "\n";
+			highScoreList += new DecimalFormat("#,###").format(Double.parseDouble(line.substring(line.indexOf(",") + 1))) + "\n";
 			highScoreNameList += line.substring(0, line.indexOf(",")) + "\n";
 			i++;
 		}

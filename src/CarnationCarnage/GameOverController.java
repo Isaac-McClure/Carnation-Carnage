@@ -5,6 +5,7 @@
 package CarnationCarnage;
 
 import java.io.*;
+import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
@@ -135,6 +136,7 @@ public class GameOverController {
 		// sort high scores
 		int j = 0;
 		double temp = 0;
+		i=0;
 
 		for (i = 0; i <= 4; i++) {
 			for (j = 0; j <= 4; j++) {

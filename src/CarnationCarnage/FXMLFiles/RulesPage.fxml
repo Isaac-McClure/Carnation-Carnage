@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.HowToController">
+<BorderPane maxHeight="620.0" maxWidth="1000.0" prefHeight="555.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarnationCarnage.HowToController">
    <right>
       <AnchorPane fx:id="howToPane" prefHeight="555.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView cache="true" fitHeight="595.0" fitWidth="1000.0">
+            <ImageView cache="true" fitHeight="555.0" fitWidth="1000.0">
                <image>
                   <Image url="@../Images/corina-ardeleanu-39335-unsplash.jpg" />
                </image>
@@ -22,7 +24,7 @@
                   <Rectangle2D minX="1000.0" width="555.0" />
                </viewport>
             </ImageView>
-            <Label prefHeight="70.0" prefWidth="430.0" text="How To Play">
+            <Label layoutX="318.0" prefHeight="80.0" prefWidth="364.0" text="How To Play">
                <font>
                   <Font name="Wingdings" size="64.0" />
                </font>
@@ -35,11 +37,11 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <TextArea layoutY="80.0" opacity="0.71" prefHeight="466.0" prefWidth="855.0" text="This game shares the same rules as the classic Battleships board game. &#10;Two players take turns trying to hit flowers in each others garden, but as the fence is too high to see over,&#10; you must guess using a coordinate system.&#10;&#10;Click the New Game menu button to start a new game. &#10;&#10;A coin flip will decide which player goes first. Each player the plants their flowers as they would like. &#10;&#10;In this game there are 5 types of flowers; Roses, Carnations, Tulips, Pansies, and Daisies. &#10;&#10;Roses are planted in a row of 5, Carnations in a row of 4, Pansies and Tulips in rows of 3,&#10; and Daisies in rows of 2.&#10;&#10;After planting is complete, player one clicks on a square to select it as a target and then clicks fire.&#10;If the shot is a hit, then the player gets to go again.&#10;&#10;The players take turns shooting until one player has destroyed all the flowers in his or her neighbors garden,&#10; at which point that player is the winner.">
+            <TextArea layoutY="80.0" maxHeight="556.0" maxWidth="1000.0" opacity="0.71" prefHeight="396.0" prefWidth="1000.0" text="This game shares the same rules as the classic Battleships board game. &#10;Two players take turns trying to hit flowers in each others garden, but as the fence is too high to see over,&#10; you must guess using a coordinate system.&#10;&#10;Click the New Game menu button to start a new game. &#10;The first player is selected by random chance. Each player the plants their flowers as they would like. &#10;&#10;In this game there are 5 types of flowers; Roses, Carnations, Poppys, Pansies, and Daisies. &#10;Roses are planted in a row of 5, Carnations in a row of 4, Poppys and Tulips in rows of 3, and Daisies in rows of 2.&#10;&#10;After planting is complete, The first player clicks on a square to select it as a target and then clicks fire.&#10;If the shot is a hit, then the player gets to go again.&#10;&#10;The players take turns shooting until one player has destroyed all the flowers in his or her neighbors garden,&#10; at which point that player is the winner.">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></TextArea>
-            <Button layoutY="550.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="31.0" prefWidth="107.0" text="Back" />
+            <Button layoutX="414.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#backClicked" prefHeight="41.0" prefWidth="172.0" text="Back" />
          </children>
       </AnchorPane>
    </right>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,35 +26,45 @@
                <font>
                   <Font size="32.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="51.0" fitWidth="42.0" onMouseClicked="#howToPlayClicked" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Flowers/Carnationdl.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend mode="HARD_LIGHT" />
+               </effect>
             </Button>
             <Button layoutX="532.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#howToPlayClicked" prefHeight="67.0" prefWidth="320.0" text="How to play" textFill="#1f7f2d" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="209.0">
                <font>
                   <Font size="32.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="51.0" fitWidth="42.0" onMouseClicked="#newGameClicked" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Flowers/Rose.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend mode="HARD_LIGHT" />
+               </effect>
             </Button>
             <Button layoutX="532.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#exitClicked" prefHeight="67.0" prefWidth="320.0" text="Exit" textFill="#1f7f2d" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="376.0">
                <font>
                   <Font size="32.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend mode="HARD_LIGHT" />
+               </effect>
             </Button>
             <Button layoutX="54.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#highScoreClicked" prefHeight="67.0" prefWidth="320.0" text="    View high scores" textFill="#1f7f2d" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="548.0" AnchorPane.topAnchor="376.0">
                <font>
                   <Font size="32.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend mode="HARD_LIGHT" />
+               </effect>
             </Button>
             <Label alignment="CENTER" layoutX="171.0" layoutY="30.0" prefHeight="98.0" prefWidth="458.0" text="Carnation Carnage" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="171.0" AnchorPane.topAnchor="30.0">
                <font>
@@ -67,14 +79,44 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <ImageView fitHeight="51.0" fitWidth="42.0" layoutX="573.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Flowers/Pansy.jpg" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="54.0" fitWidth="42.0" layoutX="63.0" layoutY="390.0" onMouseClicked="#exitClicked" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Flowers/Daisy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="65.0" layoutY="225.0">
+               <image>
+                  <Image url="@../Flowers/carnation.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="402.0" layoutY="225.0">
+               <image>
+                  <Image url="@../Flowers/carnation.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="42.0" layoutX="401.0" layoutY="390.0" onMouseClicked="#exitClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Flowers/Daisy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="39.0" layoutX="548.0" layoutY="230.0">
+               <image>
+                  <Image url="@../Flowers/poppy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="39.0" layoutX="879.0" layoutY="230.0">
+               <image>
+                  <Image url="@../Flowers/poppy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="545.0" layoutY="389.0">
+               <image>
+                  <Image url="@../Flowers/pansy.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="876.0" layoutY="388.0">
+               <image>
+                  <Image url="@../Flowers/pansy.png" />
                </image>
             </ImageView>
          </children>

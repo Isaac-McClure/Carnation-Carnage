@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,7 +34,17 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Button fx:id="continueButton" layoutX="310.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#continueClicked" text="Continue" />
+            <Button fx:id="continueButton" layoutX="405.0" layoutY="440.0" mnemonicParsing="false" onMouseClicked="#continueClicked" prefHeight="40.0" prefWidth="126.0" text="Continue">
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                        <Light.Distant azimuth="70.12" color="#ffbc35" elevation="65.93" />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
             <Label fx:id="winnerLabel" layoutX="137.0" layoutY="183.0" prefHeight="35.0" prefWidth="225.0" text="Player One" textFill="#e57e04">
                <font>
                   <Font name="Franklin Gothic Book" size="36.0" />
@@ -75,7 +87,6 @@
                <font>
                   <Font name="Franklin Gothic Book" size="24.0" />
                </font></Label>
-            <Button fx:id="saveButton" layoutX="605.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#saveClicked" text="Save" />
          </children>
       </AnchorPane>
    </left>
