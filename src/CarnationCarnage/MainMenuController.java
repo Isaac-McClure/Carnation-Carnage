@@ -5,6 +5,9 @@
 package CarnationCarnage;
 
 import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,7 +68,10 @@ public class MainMenuController extends Application{
     @FXML
     public void exitClicked() {
         //Exit
-        System.exit(0);
+        int selection =JOptionPane.showConfirmDialog(null,"Are you sure you want to exit Carnation Carnage?","", JOptionPane.OK_OPTION,JOptionPane.PLAIN_MESSAGE);
+        
+        if (selection==0)
+    	System.exit(0);
     }
 
 

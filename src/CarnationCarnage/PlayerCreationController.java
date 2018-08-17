@@ -61,7 +61,7 @@ public class PlayerCreationController {
             coinFlip();
         }
         else {
-            helpLabel.setText("Please enter valid usernames. Some symbols are dissallowed.");
+            helpLabel.setText("Please enter valid usernames. Symbols are not accepted");
         }
     }
 

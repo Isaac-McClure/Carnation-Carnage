@@ -63,23 +63,7 @@
                <font>
                   <Font name="Franklin Gothic Book" size="24.0" />
                </font></Label>
-            <Label fx:id="winnerHitRateLabel" layoutX="240.0" layoutY="347.0" prefHeight="17.0" prefWidth="133.0" text="Hit Rate" textFill="#e7a603">
-               <font>
-                  <Font name="Franklin Gothic Book" size="24.0" />
-               </font></Label>
-            <Label fx:id="loserHitRateLabel" layoutX="666.0" layoutY="347.0" prefHeight="17.0" prefWidth="160.0" text="Hit Rate" textFill="#e7a603">
-               <font>
-                  <Font name="Franklin Gothic Book" size="24.0" />
-               </font></Label>
             <Label layoutX="137.0" layoutY="277.0" prefHeight="28.0" prefWidth="90.0" text="Score" textFill="#e57e04">
-               <font>
-                  <Font name="Franklin Gothic Book" size="24.0" />
-               </font></Label>
-            <Label layoutX="137.0" layoutY="347.0" prefHeight="24.0" prefWidth="122.0" text="Hit Rate" textFill="#e57e04">
-               <font>
-                  <Font name="Franklin Gothic Book" size="24.0" />
-               </font></Label>
-            <Label layoutX="563.0" layoutY="347.0" prefHeight="25.0" prefWidth="109.0" text="Hit Rate" textFill="#e57e04">
                <font>
                   <Font name="Franklin Gothic Book" size="24.0" />
                </font></Label>

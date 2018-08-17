@@ -136,14 +136,18 @@ public class GameOverController {
 		// sort high scores
 		int j = 0;
 		double temp = 0;
-		i=0;
+		String tempS = "";
+		i = 0;
 
 		for (i = 0; i <= 4; i++) {
 			for (j = 0; j <= 4; j++) {
 				if (this.highScores[j + 1] > this.highScores[j]) {
 					temp = this.highScores[j];
+					tempS = this.highScoreNames[j];
 					this.highScores[j] = this.highScores[j + 1];
+					this.highScoreNames[j] = this.highScoreNames[j + 1];
 					this.highScores[j + 1] = temp;
+					this.highScoreNames[j + 1] = tempS;
 				}
 			}
 		}
