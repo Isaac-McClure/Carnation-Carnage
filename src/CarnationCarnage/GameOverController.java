@@ -82,11 +82,10 @@ public class GameOverController {
 			// winning without firing a shot causes an arithmetic error, occurs
 			// when other player
 			// surrenders on first turn.
-			winnerHitRateLabel.setText(String.valueOf(winner.getHits() / winner.getTotalShots()));
 		}
 
 		catch (ArithmeticException e) {
-			winnerHitRateLabel.setText("0");
+			
 		}
 
 		// set up the loser labels
@@ -95,9 +94,9 @@ public class GameOverController {
 		loserScoreLabel.setText(String.valueOf(loser.getScore()));
 		try {
 			// if the winner wins in one turn it can cause division by 0
-			loserHitRateLabel.setText(String.valueOf(loser.getHits() / loser.getTotalShots()));
+			
 		} catch (ArithmeticException e) {
-			loserHitRateLabel.setText("0");
+
 		}
 		this.winnerName = winner.getName();
 		this.winnerScore = winner.getScore();
